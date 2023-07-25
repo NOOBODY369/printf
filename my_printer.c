@@ -3,12 +3,11 @@
 /**
  * my_printer - printing.
  * @c: character to print.
- * @len: lenth.
  *
  * Return: void.
 */
 
-void	my_printer(char c, int *len)
+void	my_printer(char c)
 {
-	*len += write(1, &c, 1);
+	write(1, &c, 1);
 }
