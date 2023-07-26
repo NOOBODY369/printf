@@ -47,7 +47,7 @@ int	_printf(const char *format, ...)
 {
 	int		i;
 	va_list	valist;
-	int		*len;
+	int		len;
 
 	i = 0;
 	len = 0;
@@ -66,5 +66,5 @@ int	_printf(const char *format, ...)
 		i++;
 	}
 	va_end(valist);
-	return (*len);
+	return (len);
 }
