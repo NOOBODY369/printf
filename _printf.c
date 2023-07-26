@@ -31,7 +31,6 @@ void	_check(const char *s, va_list valist, int *len, int i)
 	{
 		write(1, "0x", 2);
 		(*len)++;
-		(*len)++;
 		_putaddr(va_arg(valist, unsigned long int), len);
 	}
 }
