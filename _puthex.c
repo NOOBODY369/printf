@@ -60,7 +60,7 @@ unsigned int	_putuphex(unsigned int nbr, int *len)
  * Return: always 0.
 */
 
-unsigned long	_putaddr(unsigned long nbr, int *len)
+int	_putaddr(unsigned long nbr, int *len)
 {
 	char	*s;
 

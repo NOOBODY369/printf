@@ -20,7 +20,7 @@ void	_putstr(char *str, int *len)
 	}
 	while (str[i] != '\0')
 	{
-		my_printer(str[i + 1], len);
+		my_printer(str[i], len);
 		i++;
 	}
 }
