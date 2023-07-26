@@ -24,7 +24,7 @@ void	_check(char *s, va_list valist, int *len, int i)
 	if (s[i] == 'u')
 		_putd(va_arg(valist, unsigned int), len);
 	if (s[i] == 'c')
-		my_printer(va_arg(valist, char), len);
+		my_printer(va_arg(valist, int), len);
 	if (s[i] == '%')
 		my_printer('%', len);
 	if (s[i] == 'p')
