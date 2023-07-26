@@ -15,7 +15,7 @@ unsigned int	_putlowhex(unsigned int nbr, int *len)
 	s = "0123456789abcdef";
 	if (nbr < 16)
 	{
-		my_printer(s[nbr]);
+		my_printer(s[nbr], len);
 	}
 	else
 	{
@@ -41,7 +41,7 @@ unsigned int	_putuphex(unsigned int nbr, int *len)
 	str = "0123456789ABCDEF";
 	if (nbr < 16)
 	{
-		my_printer(str[nbr]);
+		my_printer(str[nbr], len);
 	}
 	else
 	{
@@ -67,7 +67,7 @@ unsigned long	_putaddr(unsigned long nbr, int *len)
 	s = "0123456789abcdef";
 	if (nbr < 16)
 	{
-		my_printer(s[nbr]);
+		my_printer(s[nbr], len);
 	}
 	else
 	{
