@@ -11,7 +11,7 @@
  * Return: void.
 */
 
-void	_check(char *s, va_list valist, int *len, int i)
+void	_check(const char *s, va_list valist, int *len, int i)
 {
 	if (s[i] == 'x')
 		_putlowhex(va_arg(valist, unsigned int), len);
