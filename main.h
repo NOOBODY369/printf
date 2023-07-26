@@ -4,13 +4,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-void			my_printer(char c);
-unsigned int	_putlowhex(unsigned int nbr);
-unsigned int	_putuphex(unsigned int nbr);
-unsigned int	_putd(unsigned int nb);
-int				_putnbr(int nb);
-void			_putstr(char *str);
-unsigned long	_putaddr(unsigned long nbr);
+void			my_printer(char c, int *len);
+unsigned int	_putlowhex(unsigned int nbr, int *len);
+unsigned int	_putuphex(unsigned int nbr, int *len);
+unsigned int	_putd(unsigned int nb, int *len);
+int				_putnbr(int nb, int *len);
+void			_putstr(char *str, int *len);
+unsigned long	_putaddr(unsigned long nbr, int *len);
 void			_check(char *s, va_list valist, int *len, int i);
 int				_printf(const char *format, ...);
 #endif

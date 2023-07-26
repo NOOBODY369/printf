@@ -14,25 +14,23 @@
 void	_check(char *s, va_list valist, int *len, int i)
 {
 	if (s[i] == 'x')
-		_putlowhex(va_arg(valist, unsigned int));
+		_putlowhex(va_arg(valist, unsigned int), len);
 	if (s[i] == 'X')
-		_putuphex(va_arg(valist, unsigned int));
+		_putuphex(va_arg(valist, unsigned int), len);
 	if (s[i] == 'i' || s[i] == 'd')
-		_putnbr(va_arg(valist, int));
+		_putnbr(va_arg(valist, int), len);
 	if (s[i] == 's')
-		_putstr(va_arg(valist, char *));
+		_putstr(va_arg(valist, char *), len);
 	if (s[i] == 'u')
-		_putd(va_arg(valist, unsigned int));
+		_putd(va_arg(valist, unsigned int), len);
 	if (s[i] == 'c')
-		my_printer(va_arg(valist, int));
+		my_printer(va_arg(valist, int), len);
 	if (s[i] == '%')
-		my_printer('%');
+		my_printer('%', len);
 	if (s[i] == 'p')
 	{
-		write(1, "0x", 2);
-		(*len)++;
-		(*len)++;
-		_putaddr(va_arg(valist, unsigned long));
+		len += write(1, "0x", 2);
+		_putaddr(va_arg(valist, unsigned long int), len);
 	}
 }
 
@@ -56,11 +54,11 @@ int	_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			_check((char *)format[i + 1], valist, &len, i);
 			i++;
-			_check((char *)format, valist, &len, i);
 		}
 		else
-			my_printer(format[i]);
+			my_printer(format[i], &len);
 		i++;
 	}
 	va_end(valist);

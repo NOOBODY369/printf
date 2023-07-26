@@ -3,23 +3,24 @@
 /**
  * _putstr - printing a string.
  * @str: string to print.
+ * @len: lenth.
  *
  * Return: void.
 */
 
-void	_putstr(char *str)
+void	_putstr(char *str, int *len)
 {
 	int	i;
 
 	i = 0;
 	if (!str)
 	{
-		write(1, "(null)", 6);
+		*len += write(1, "(null)", 6);
 		return;
 	}
 	while (str[i] != '\0')
 	{
-		my_printer(str[i]);
+		my_printer(str[i], len);
 		i++;
 	}
 }
