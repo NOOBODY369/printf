@@ -29,7 +29,9 @@ void	_check(char *s, va_list valist, int *len, int i)
 		my_printer('%', len);
 	if (s[i] == 'p')
 	{
-		len += write(1, "0x", 2);
+		write(1, "0x", 2);
+		(*len)++;
+		(*len)++;
 		_putaddr(va_arg(valist, unsigned long int), len);
 	}
 }
@@ -54,7 +56,7 @@ int	_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			_check((char *)format[i + 1], valist, &len, i);
+			_check((char *)format[i], valist, &len, i);
 			i++;
 		}
 		else
