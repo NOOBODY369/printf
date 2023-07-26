@@ -56,8 +56,8 @@ int	_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			i++;
 			_check((char *)format, valist, &len, i);
-				i++;
 		}
 		else
 			my_printer(format[i], &len);
