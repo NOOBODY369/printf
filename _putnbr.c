@@ -16,11 +16,11 @@ int	_putnbr(int nb, int *len)
 	if (c < 0)
 	{
 		c *= -1;
-		my_printer('-', len);
+		my_printer('-');
 	}
 	if (c < 10)
 	{
-		my_printer(c + '0', len);
+		my_printer(c + '0');
 	}
 	else
 	{

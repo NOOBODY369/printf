@@ -12,7 +12,7 @@
 unsigned int	_putd(unsigned int nb, int *len)
 {
 	if (nb <= 9)
-		my_printer(nb + '0', len);
+		my_printer(nb + '0');
 	else
 	{
 
