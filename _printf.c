@@ -52,7 +52,7 @@ int	_printf(const char *format, ...)
 	i = 0;
 	len = 0;
 	if (!format)
-		return(-1);
+		return (-1);
 	va_start(valist, format);
 	while (format[i])
 	{
